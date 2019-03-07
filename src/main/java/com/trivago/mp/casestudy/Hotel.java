@@ -4,13 +4,24 @@ package com.trivago.mp.casestudy;
  * Stores all relevant information about a particular hotel.
  */
 public class Hotel {
-    private final int id;
+    private final int    id;
+    private final String cityName;
     private final String name;
-    private final int rating;
-    private final int stars;
+    private final int    rating;
+    private final int    stars;
 
-    public Hotel(int id, String name, int rating, int stars) {
+    /**
+     * Instantiates a new Hotel.
+     *
+     * @param id       the id
+     * @param cityName the city name
+     * @param name     the name
+     * @param rating   the rating
+     * @param stars    the stars
+     */
+    public Hotel(int id, String cityName, String name, int rating, int stars) {
         this.id = id;
+        this.cityName = cityName;
         this.name = name;
         this.rating = rating;
         this.stars = stars;
@@ -19,16 +30,25 @@ public class Hotel {
     /**
      * A unique id as specified in the corresponding .csv file
      *
-     * @return
+     * @return id
      */
     public int getId() {
         return id;
     }
 
     /**
+     * Gets city name.
+     *
+     * @return the city name
+     */
+    public String getCityName() {
+        return cityName;
+    }
+
+    /**
      * The English name of the hotel
      *
-     * @return
+     * @return name
      */
     public String getName() {
         return name;
@@ -37,7 +57,7 @@ public class Hotel {
     /**
      * The ratings given by user feedback, between 0-100
      *
-     * @return
+     * @return rating
      */
     public int getRating() {
         return rating;
@@ -46,7 +66,7 @@ public class Hotel {
     /**
      * The star rating for the given hotel, between 1-5
      *
-     * @return
+     * @return stars
      */
     public int getStars() {
         return stars;

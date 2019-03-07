@@ -6,6 +6,7 @@ import java.util.List;
  * Wraps a hotel and a list of {@link Offer Offers}.
  */
 public class HotelWithOffers {
+
     private final Hotel hotel;
 
     /**
@@ -13,20 +14,33 @@ public class HotelWithOffers {
      */
     List<Offer> offers;
 
-    public HotelWithOffers(Hotel hotel) {
+    /**
+     * Instantiates a new Hotel with offers.
+     *
+     * @param hotel  the hotel
+     * @param offers the offers
+     */
+    public HotelWithOffers(Hotel hotel, List<Offer> offers) {
         this.hotel = hotel;
+        this.offers = offers;
     }
 
+    /**
+     * Gets hotel.
+     *
+     * @return the hotel
+     */
     public Hotel getHotel() {
         return hotel;
     }
 
+    /**
+     * Gets offers.
+     *
+     * @return the offers
+     */
     public List<Offer> getOffers() {
         return offers;
-    }
-
-    public void setOffers(List<Offer> offers) {
-        this.offers = offers;
     }
 
     @Override
