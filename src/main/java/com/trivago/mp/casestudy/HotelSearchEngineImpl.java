@@ -151,10 +151,18 @@ public class HotelSearchEngineImpl implements HotelSearchEngine {
                         .collect(toList()))
                     .collect(toList())
                     .forEach(list -> {
-                            ah.computeIfAbsent(list.get(0),
-                                empList -> new ArrayList<>()).add(list.get(1));
-                            ha.computeIfAbsent(list.get(1),
-                                empList -> new ArrayList<>()).add(list.get(0));
+                            ah.merge(list.get(0), new ArrayList<>(),
+                                    (innerList, value) -> {
+                                        innerList.add(list.get(1));
+                                        return innerList;
+                                    }
+                            );
+                            ha.merge(list.get(1), new ArrayList<>(),
+                                    (innerList, value) -> {
+                                        innerList.add(list.get(0));
+                                        return innerList;
+                                    }
+                            );
                         }
                     );
                 relations.setAdvertiserHotel(ah);

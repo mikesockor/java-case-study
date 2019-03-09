@@ -1,6 +1,8 @@
 package com.trivago.mp.casestudy.repositories;
 
 import com.trivago.mp.casestudy.Advertiser;
+
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -8,7 +10,7 @@ import java.util.Map;
  */
 public class AdvertiserRepositoryImpl implements AdvertiserRepository {
 
-    private Map<Integer, Advertiser> advertisers;
+    private Map<Integer, Advertiser> advertisers = new HashMap<>();
 
     @Override
     public Map<Integer, Advertiser> findAll() {

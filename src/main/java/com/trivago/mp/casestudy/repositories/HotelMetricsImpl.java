@@ -1,5 +1,6 @@
 package com.trivago.mp.casestudy.repositories;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -7,9 +8,9 @@ import java.util.Map;
  */
 public class HotelMetricsImpl implements HotelMetrics {
 
-    private Map<Integer, Long> hotelClicks;
+    private Map<Integer, Long> hotelClicks = new HashMap<>();
 
-    private Map<Integer, Long> hotelImpression;
+    private Map<Integer, Long> hotelImpression = new HashMap<>();
 
     @Override
     public Map<Integer, Long> getHotelClicks() {
